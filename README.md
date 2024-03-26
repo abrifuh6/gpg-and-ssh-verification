@@ -10,8 +10,13 @@
      gpg --full-generate-key
      ```
 
-   - Follow the prompts to select the key type, key size, expiration period, and provide your email address.
-   - Optionally, set a passphrase to secure your key.
+   - Follow the prompts and choose the following options:
+
+     - **Key Type:** RSA (default)
+     - **Key Size:** 4096 bits (recommended for enhanced security)
+     - **Expiration Period:** Choose an expiration period in days, weeks, months, or years. Alternatively, choose "0" for no expiration.
+     - **Email Address:** Provide the email address associated with your GitHub account or the one you intend to use for signing commits.
+     - **Passphrase (Optional):** You may be prompted to set a passphrase to protect your private key. Setting a passphrase is strongly recommended for enhanced security.
 
 2. **List GPG Keys:**
    - After generating the key pair, list your GPG keys to obtain the key ID.
