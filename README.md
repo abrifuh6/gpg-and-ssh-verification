@@ -30,10 +30,10 @@
 
 3. **Export Public Key:**
    - Export the public key associated with your GPG key pair.
-   - Run the following command, replacing `<your-email>` with your email address:
+   - Run the following command, replacing `<keyid>` with your keyid:
 
      ```bash
-     gpg --armor --export <your-email>
+     gpg --armor --export <keyid>
      ```
 
    - Copy the output of this command; you'll need it to add your GPG key to GitHub.
@@ -54,7 +54,7 @@
    - Paste the public key you copied earlier into the provided text box.
    - Click "Add GPG key".
 
-#### Configuring Git to Use GPG Key:
+## Configuring Git to Use GPG Key:
 
 1. **Associate GPG Key with Git:**
    - Once your GPG key is added to GitHub, configure Git to use it for signing commits.
@@ -76,6 +76,34 @@
      ```
 
    - Both commands should output the key ID and `true`, respectively.
+
+### Adding GPG_TTY to Bash Environment:
+
+1. **Open your Bash Configuration File:**
+   - Open your `.bashrc` or `.bash_profile` file using a text editor. You can use `nano`, `vim`, or any other text editor of your choice. For example:
+
+     ```bash
+     nano ~/.bashrc
+     ```
+
+2. **Add Command to the File:**
+   - Scroll to the bottom of the file and add the following line:
+
+     ```bash
+     export GPG_TTY=$(tty)
+     ```
+
+3. **Save and Close the File:**
+   - Save the file and exit the text editor. If you're using `nano`, press `Ctrl + O` to save and `Ctrl + X` to exit.
+
+4. **Source the File:**
+   - After saving the changes, either restart your terminal session or run:
+
+     ```bash
+     source ~/.bashrc
+     ```
+
+   - This ensures that the changes take effect in your current terminal session.
 
 ---
 
